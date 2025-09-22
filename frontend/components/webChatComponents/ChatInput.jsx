@@ -69,32 +69,34 @@ export function ChatInput({ onSendMessage, isLoading }) {
 
 
       {/* Send Button */}
-      <Button
-        type="submit"
-        disabled={!message.trim() || isLoading}
-        onClickCapture={handleSubmit}
-        className={
-            cn(
-                "ml-2 p-2 text-gray-800 disabled:text-gray-400 disabled:cursor-not-allowed transition-colors duration-200 rounded-full focus:outline-none",
-                "hover:-rotate-[45deg]",
-                "transition-transform duration-300 ease-in-out",
-            )
-        }
-        >
-        {/* Send icon SVG */}
-        <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 16 16"
-        fill="none"
-        className="w-4 h-4"
-        strokeWidth="2"
-        >
-        <path
-            d="M.5 1.163A1 1 0 0 1 1.97.28l12.868 6.837a1 1 0 0 1 0 1.766L1.969 15.72A1 1 0 0 1 .5 14.837V8.694c0-.192.124-.3.35-.308l9.504-.036a.3.3 0 0 0 .147-.156.3.3 0 0 0 0-.298.3.3 0 0 0-.147-.156l-9.504-.036c-.226-.008-.35-.116-.35-.308V1.163z"
-            fill="currentColor"
-        ></path>
-        </svg>
-    </Button>
+      <div className="flex items-center justify-center p-2 backdrop-blur-md rounded-full shadow-sm [box-shadow:0_12px_40px_0_hsl(0_0%_0%_/_0.4)]">
+          <Button
+            type="submit"
+            disabled={!message.trim() || isLoading}
+            onClickCapture={handleSubmit}
+            className={
+                cn(
+                    "ml-2 p-2 text-white disabled:text-gray-600 disabled:cursor-not-allowed transition-colors duration-200 rounded-full focus:outline-none",
+                    "hover:-rotate-[45deg]",
+                    "transition-transform duration-300 ease-in-out",
+                )
+            }
+            >
+            {/* Send icon SVG */}
+            <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 16 16"
+            fill="none"
+            className="w-4 h-4"
+            strokeWidth="2"
+            >
+            <path
+                d="M.5 1.163A1 1 0 0 1 1.97.28l12.868 6.837a1 1 0 0 1 0 1.766L1.969 15.72A1 1 0 0 1 .5 14.837V8.694c0-.192.124-.3.35-.308l9.504-.036a.3.3 0 0 0 .147-.156.3.3 0 0 0 0-.298.3.3 0 0 0-.147-.156l-9.504-.036c-.226-.008-.35-.116-.35-.308V1.163z"
+                fill="currentColor"
+            ></path>
+            </svg>
+        </Button>
+      </div>
     </div>
   );
 }

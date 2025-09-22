@@ -40,7 +40,7 @@ export function ChatMessage({ message, isUser, timestamp, isLoading }) {
           </div>
         ) : (
           <>
-            <p className="text-sm leading-relaxed whitespace-pre-wrap">{message}</p>
+            <p className="text-sm leading-relaxed whitespace-pre-wrap text-[#ffffff]">{message}</p>
             <span className="text-xs opacity-70 mt-2 block">
               {timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
             </span>
