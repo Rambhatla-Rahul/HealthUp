@@ -11,6 +11,7 @@ const WebChat = () => {
       alt='chat-background'
       fill
       className='object-cover -z-10 absolute top-0 left-0'
+      priority
       />
       
         <ChatHeader />

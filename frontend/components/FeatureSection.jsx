@@ -74,7 +74,7 @@ const features = [
 
 const FeaturesSection = () => {
   return (
-    <section className="py-24 bg-[#0a0a0a] relative p-4">
+    <section className="py-24 bg-[#0a0a0a] relative p-4 w-full">
       
       {/* Background Pattern */}
         <div className='flex w-full bg-gray/30 rounded-2xl bg-gray/30 backdrop-blur-md p-4'>
