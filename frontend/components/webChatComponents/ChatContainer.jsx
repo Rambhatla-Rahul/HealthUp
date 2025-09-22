@@ -5,6 +5,7 @@ import { ChatInput } from "./ChatInput";
 
 import { ChevronDown } from "lucide-react";
 import { Button } from "@heroui/react";
+import axios from "axios";
 
 export function ChatContainer({ className }) {
   const [messages, setMessages] = useState([
@@ -34,30 +35,47 @@ export function ChatContainer({ className }) {
 
   useEffect(() => {
     scrollToBottom();
+    
   }, [messages]);
 
   const handleSendMessage = async (content) => {
-    const userMessage = {
+    try {
+      const userMessage = {
       id: Date.now().toString(),
       content,
       isUser: true,
       timestamp: new Date(),
     };
 
-    setMessages(prev => [...prev, userMessage]);
+    
     setIsLoading(true);
-
-    // Simulate AI response
+    setMessages(prev => [...prev, userMessage]);
+    const response = await axios.post('http://10.143.128.13:8000/chat',{
+      "user_query": content,
+      "phone_number": "1234567890"
+    })
+    console.log(response.data.response.original);
     setTimeout(() => {
       const aiMessage = {
         id: (Date.now() + 1).toString(),
-        content: "Thank you for your message! This is a demo response. In a real implementation, this would connect to an AI API to generate intelligent responses.",
+        content: response.data.response.original,
         isUser: false,
         timestamp: new Date(),
       };
       setMessages(prev => [...prev, aiMessage]);
       setIsLoading(false);
     }, 1500);
+    } catch (error) {
+      const aiMessage = {
+        id: (Date.now() + 1).toString(),
+        content: "Unable to fetch response. Server might be down. Please try again later.",
+        isUser: false,
+        timestamp: new Date(),
+      };
+      setMessages(prev => [...prev, aiMessage]);
+    }finally{
+      setIsLoading(false);
+    }
   };
 
   return (

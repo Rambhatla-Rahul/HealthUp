@@ -11,7 +11,7 @@ const HeroSection = () => {
     router.push('/webchat')
   }
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden md:p-4 w-full">
+    <section className="relative min-h-[100vh] md:min-h-screen flex items-center justify-center overflow-hidden md:p-4 w-full">
       {/* Background Elements */}
       <div className='flex w-full h-full md:min-h-[95vh] md:rounded-2xl bg-gray/30 backdrop-blur-md p-4 items-center'>
         <div className="container mx-auto px-6 relative z-10">
@@ -103,7 +103,7 @@ const HeroSection = () => {
                     <img 
                     src={'/hero-image.webp'} 
                     alt="Healthcare Chatbot Interface" 
-                    className="w-[80%] mx-auto rounded-3xl shadow-large"
+                    className="w-[80%] mx-auto rounded-3xl shadow-large hidden md:block"
                     />
                 </motion.div>
                 

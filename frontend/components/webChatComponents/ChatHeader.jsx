@@ -20,7 +20,7 @@ export function ChatHeader() {
           </div>
         </div>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 backdrop-blur-md rounded-full">
           <Button variant="ghost" size="icon" className="glass-hover rounded-full">
             <Plus size={20} />
           </Button>

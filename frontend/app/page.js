@@ -5,6 +5,8 @@ import HeroSection from "@/components/HeroSection";
 import Image from "next/image";
 import { useState } from "react";
 import { ThemeProvider } from "next-themes";
+import HowItWorksSection from "@/components/HowItWorksSection";
+import CTASection from "@/components/CTASection";
 export default function Home() {
   const [isModalOpen,setIsModalOpen] = useState(true);
   return (
@@ -13,6 +15,8 @@ export default function Home() {
         {/* <Image className="object-cover fixed top-0 left-0" src={`/hero-img.webp`} alt="Hero Image" fill/> */}
         <HeroSection/>
         <FeaturesSection/>
+        <HowItWorksSection/>
+        <CTASection/>
       </main>
         
     

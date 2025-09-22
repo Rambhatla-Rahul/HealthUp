@@ -1,8 +1,7 @@
 import { motion } from 'framer-motion';
 
 import { MessageCircle, Smartphone, Heart, CheckCircle } from 'lucide-react';
-import healthcareAwareness from '@/assets/healthcare-awareness.jpg';
-import whatsappHealth from '@/assets/whatsapp-health.jpg';
+
 import { Card, CardBody } from '@heroui/react';
 
 const steps = [
@@ -34,8 +33,8 @@ const steps = [
 
 const HowItWorksSection = () => {
   return (
-    <section className="py-24 bg-muted/30">
-      <div className="container mx-auto px-6">
+    <section className="py-24 bg-muted/30 w-full bg-black">
+      <div className="container mx-auto px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -92,7 +91,7 @@ const HowItWorksSection = () => {
                   whileInView={{ scaleX: 1 }}
                   transition={{ duration: 0.8, delay: index * 0.2 + 0.4 }}
                   viewport={{ once: true }}
-                  className="hidden lg:block absolute top-1/2 -right-4 w-8 h-0.5 bg-gradient-to-r from-primary to-accent origin-left"
+                  className="hidden lg:block absolute top-1/2 -right-4 w-8 h-0.5 bg-gradient-to-r from-primary to-accent origin-left bg-gray-600"
                 />
               )}
             </motion.div>
@@ -100,7 +99,7 @@ const HowItWorksSection = () => {
         </div>
 
         {/* Platforms Showcase */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-center px-8">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -108,10 +107,10 @@ const HowItWorksSection = () => {
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <h3 className="text-3xl font-bold text-foreground">
+            <h3 className="text-3xl font-bold text-foreground text-center w-full">
               Available on Multiple Platforms
             </h3>
-            <p className="text-lg text-muted-foreground leading-relaxed">
+            <p className="text-lg text-muted-foreground leading-relaxed text-center" >
               Access healthcare guidance wherever you are, however you prefer to communicate. 
               Our chatbot seamlessly works across web and mobile platforms.
             </p>
@@ -157,7 +156,7 @@ const HowItWorksSection = () => {
               className="space-y-4"
             >
               <img 
-                src={healthcareAwareness} 
+                src={`/healthcare-awareness.jpg`} 
                 alt="Healthcare Awareness Interface" 
                 className="w-full rounded-2xl shadow-medium"
               />
@@ -172,7 +171,7 @@ const HowItWorksSection = () => {
               className="space-y-4 mt-8"
             >
               <img 
-                src={whatsappHealth} 
+                src={`/whatsapp-health.jpg`} 
                 alt="WhatsApp Health Chat" 
                 className="w-full rounded-2xl shadow-medium"
               />

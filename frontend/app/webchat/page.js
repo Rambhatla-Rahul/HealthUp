@@ -5,7 +5,7 @@ import React from 'react'
 
 const WebChat = () => {
   return (
-    <div className="flex flex-col h-[100vh] no-scrollbar relative">
+      <div className="flex flex-col h-[100vh] no-scrollbar relative">
       <Image
       src={`/chat-bg.webp`}
       alt='chat-background'

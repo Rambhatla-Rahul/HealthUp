@@ -61,7 +61,7 @@ export function ChatInput({ onSendMessage, isLoading }) {
             "max-h-[64rem]",
           )}
           rows={heightSize >6? 6:heightSize}
-          placeholder="Enter your Question here?"
+          placeholder="Enter your Question here..."
           disabled={isLoading}
           value={message}
         />
