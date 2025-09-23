@@ -99,7 +99,7 @@ const HowItWorksSection = () => {
         </div>
 
         {/* Platforms Showcase */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center px-8">
+        <div className="grid lg:grid-cols-2 gap-12 items-center px-8 w-full">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -115,7 +115,7 @@ const HowItWorksSection = () => {
               Our chatbot seamlessly works across web and mobile platforms.
             </p>
             
-            <div className="space-y-4">
+            <div className="space-y-4 flex flex-col">
               <motion.div
                 whileHover={{ x: 5 }}
                 className="flex items-center space-x-4 p-4 rounded-lg bg-primary/5 border border-primary/10"
@@ -149,9 +149,9 @@ const HowItWorksSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="grid grid-cols-2 gap-6"
+            className="grid grid-cols-1 gap-6 w-full items-center justify-center"
           >
-            <motion.div
+            {/* <motion.div
               whileHover={{ y: -5 }}
               className="space-y-4"
             >
@@ -164,17 +164,13 @@ const HowItWorksSection = () => {
                 <h4 className="font-semibold text-foreground">Web Interface</h4>
                 <p className="text-sm text-muted-foreground">Rich chat experience</p>
               </div>
-            </motion.div>
+            </motion.div> */}
             
             <motion.div
               whileHover={{ y: -5 }}
-              className="space-y-4 mt-8"
+              className="space-y-4 mt-8 h-full overflow-hidden rounded-2xl shadow-medium flex flex-col items-center justify-center bg-gray-400/30 md:bg-transparent backdrop-blur-md p-4"
             >
-              <img 
-                src={`/whatsapp-health.jpg`} 
-                alt="WhatsApp Health Chat" 
-                className="w-full rounded-2xl shadow-medium"
-              />
+              <video src={`/WhatsApp-Twilio-Model-Compressed.mp4`} autoPlay loop muted className='size-[400px] rounded-2xl'/>
               <div className="text-center">
                 <h4 className="font-semibold text-foreground">WhatsApp Chat</h4>
                 <p className="text-sm text-muted-foreground">Familiar messaging</p>

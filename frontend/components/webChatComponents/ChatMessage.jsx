@@ -2,6 +2,8 @@
 import { Bot, User } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Avatar } from "@heroui/react";
+import React from "react";
+import ReactMarkdown from "react-markdown";
 
 export function ChatMessage({ message, isUser, timestamp, isLoading }) {
   return (
@@ -40,7 +42,8 @@ export function ChatMessage({ message, isUser, timestamp, isLoading }) {
           </div>
         ) : (
           <>
-            <p className="text-sm leading-relaxed whitespace-pre-wrap text-[#ffffff]">{message}</p>
+            {/* <p className="text-sm leading-relaxed whitespace-pre-wrap text-[#ffffff]">{message}</p> */}
+            <ReactMarkdown>{message}</ReactMarkdown>
             <span className="text-xs opacity-70 mt-2 block">
               {timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
             </span>

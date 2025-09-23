@@ -50,21 +50,18 @@ export function ChatContainer({ className }) {
     
     setIsLoading(true);
     setMessages(prev => [...prev, userMessage]);
-    const response = await axios.post('http://10.143.128.13:8000/chat',{
-      "user_query": content,
-      "phone_number": "1234567890"
+    const response = await axios.post('http://10.143.128.57:8000/send_message',{
+      "message": content,
     })
-    console.log(response.data.response.original);
-    setTimeout(() => {
-      const aiMessage = {
-        id: (Date.now() + 1).toString(),
-        content: response.data.response.original,
-        isUser: false,
-        timestamp: new Date(),
-      };
-      setMessages(prev => [...prev, aiMessage]);
-      setIsLoading(false);
-    }, 1500);
+    
+    const aiMessage = {
+      id: (Date.now() + 1).toString(),
+      content: response.data.reply,
+      isUser: false,
+      timestamp: new Date(),
+    };
+    setMessages(prev => [...prev, aiMessage]);
+    setIsLoading(false);
     } catch (error) {
       const aiMessage = {
         id: (Date.now() + 1).toString(),
@@ -114,7 +111,7 @@ export function ChatContainer({ className }) {
       {showScrollButton && (
         <Button
           onClick={scrollToBottom}
-          className="absolute bottom-24 right-60 rounded-full w-12 h-12 p-0 glass glass-hover z-10 flex items-center justify-center hover:cursor-pointer"
+          className="absolute bottom-24 right-5 md:right-60 rounded-full w-12 h-12 p-0 glass glass-hover z-10 flex items-center justify-center hover:cursor-pointer"
           variant="secondary"
         >
           <ChevronDown size={20} />
