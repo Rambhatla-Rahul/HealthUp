@@ -11,7 +11,7 @@ export function ChatContainer({ className }) {
   const [messages, setMessages] = useState([
     {
       id: "welcome",
-      content: "Hello! I'm Health's Up, your AI assistant. How can I help you today?",
+      content: "Hello! I'm Care Sage, your AI assistant. How can I help you today?",
       isUser: false,
       timestamp: new Date(),
     },

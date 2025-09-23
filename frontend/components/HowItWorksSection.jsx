@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { MessageCircle, Smartphone, Heart, CheckCircle } from 'lucide-react';
 
 import { Card, CardBody } from '@heroui/react';
+import Image from 'next/image';
 
 const steps = [
   {
@@ -168,9 +169,13 @@ const HowItWorksSection = () => {
             
             <motion.div
               whileHover={{ y: -5 }}
-              className="space-y-4 mt-8 h-full overflow-hidden rounded-2xl shadow-medium flex flex-col items-center justify-center bg-gray-400/30 md:bg-transparent backdrop-blur-md p-4"
+                className="space-y-4 mt-8 h-full overflow-hidden rounded-2xl shadow-medium  flex-col items-center justify-center bg-gray-400/30 md:bg-transparent backdrop-blur-md p-4 relative hidden md:flex"
+
             >
-              <video src={`/WhatsApp-Twilio-Model-Compressed.mp4`} autoPlay loop muted className='size-[400px] rounded-2xl'/>
+              <Image src={`/iphone-Frame.png`} alt="Web Chat Interface" width={500} height={500} className='rounded-2xl absolute rotate-90 overflow-hidden'/>
+              <div className='overflow-hidden rounded-2xl max-w-sm flex items-center justify-center'>
+                <video src={`/WhatsApp-Twilio-Model-Compressed.mp4`} autoPlay loop muted className='w-[400px] h-[526px] rounded-2xl pt-[40px] overflow-hidden'/>
+              </div>
               <div className="text-center">
                 <h4 className="font-semibold text-foreground">WhatsApp Chat</h4>
                 <p className="text-sm text-muted-foreground">Familiar messaging</p>

@@ -16,7 +16,7 @@ export function ChatHeader() {
             <div className="w-8 h-8 rounded-full flex items-center justify-center">
               <MessageSquare size={18} className="text-primary" />
             </div>
-            <h1 className="text-xl font-semibold gradient-text">Health's Up</h1>
+            <h1 className="text-xl font-semibold gradient-text">Care Sage</h1>
           </div>
         </div>
 

@@ -185,7 +185,7 @@ body {
 }
 .glass {
   background: var(--gradient-glass);
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(60px);
   border: 1px solid hsl(var(--glass-border));
   box-shadow: 0 8px 32px 0 hsl(0 0% 0% / 0.37);
 }

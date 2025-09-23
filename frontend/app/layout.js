@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Health's Up",
-  description: "HealthCare Connect!",
+  title: "Care Sage",
+  description: "HealthCare Connect Chatbot!",
 };
 
 export default function RootLayout({ children }) {
